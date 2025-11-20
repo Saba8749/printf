@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_conversions.c                               :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:37:15 by saba              #+#    #+#             */
-/*   Updated: 2025/11/18 18:20:00 by segribas         ###   ########.fr       */
+/*   Created: 2025/11/18 18:20:23 by segribas          #+#    #+#             */
+/*   Updated: 2025/11/18 18:21:34 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
+int ft_print_char(int c)
+{
+	write(1, &c, 1);
+	return(1);
+}
