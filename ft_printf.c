@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saba <saba@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:30:20 by saba              #+#    #+#             */
-/*   Updated: 2025/11/16 16:48:53 by saba             ###   ########.fr       */
+/*   Updated: 2025/11/26 18:13:34 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
 int ft_printf(const char *format, ...)
 {
@@ -32,15 +30,11 @@ int ft_printf(const char *format, ...)
 			i++;
 			if (format[i] == '\0')
 			break;
-			// hier muss ich meine handleconversions und den counter aufrufen.
-			i++;
+			counter += ft_handleconv(format[i], args);
 		}
 		else
-		{
-			write(1, &format[i], 1);
-			counter++;
-			i++;
-		}
+			counter += write(1, &format[i], 1);
+		i++;
 	}
 	va_end(args);
 	return (counter);
