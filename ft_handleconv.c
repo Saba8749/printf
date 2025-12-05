@@ -6,15 +6,15 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:37:15 by saba              #+#    #+#             */
-/*   Updated: 2025/11/26 18:12:09 by segribas         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:37:39 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_handleconv(char conv, va_list ap)
+int	ft_handleconv(char conv, va_list ap)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (conv == 'd' || conv == 'i')

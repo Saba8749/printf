@@ -6,14 +6,14 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:20:23 by segribas          #+#    #+#             */
-/*   Updated: 2025/11/18 18:21:34 by segribas         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:38:14 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_print_char(int c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
-	return(1);
+	return (1);
 }

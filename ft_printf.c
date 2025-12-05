@@ -6,30 +6,28 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:30:20 by saba              #+#    #+#             */
-/*   Updated: 2025/11/26 18:13:34 by segribas         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:42:55 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int counter;
+	int		counter;
+	int		i;
+	va_list	args;
+
 	counter = 0;
-
-	int i;
 	i = 0;
-
-	va_list args;
 	va_start(args, format);
-
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			if (format[i] == '\0')
-			break;
+				break ;
 			counter += ft_handleconv(format[i], args);
 		}
 		else

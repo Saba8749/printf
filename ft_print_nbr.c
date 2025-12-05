@@ -6,18 +6,17 @@
 /*   By: segribas <segribas@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:21:52 by segribas          #+#    #+#             */
-/*   Updated: 2025/11/21 19:00:55 by segribas         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:41:40 by segribas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "ft_printf.h"
 
 int	ft_print_unbr(unsigned int nbr)
 {
-	int count;
-	int i;
-	char temp[10];
+	int		count;
+	int		i;
+	char	temp[10];
 
 	i = 0;
 	count = 0;
@@ -33,22 +32,23 @@ int	ft_print_unbr(unsigned int nbr)
 		count++;
 		nbr /= 10;
 	}
-	while (i > 0 )
+	while (i > 0)
 	{
 		i--;
 		write(1, &temp[i], 1);
 	}
-	return(count);
+	return (count);
 }
+
 int	ft_print_nbr(int nbr)
 {
-	int flag;
-	
+	int	flag;
+
 	flag = 0;
 	if (nbr == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return(11);
+		return (11);
 	}
 	if (nbr < 0)
 	{
@@ -56,5 +56,5 @@ int	ft_print_nbr(int nbr)
 		nbr = -nbr;
 		flag = 1;
 	}
-	return(ft_print_unbr((unsigned int)nbr) + flag);
+	return (ft_print_unbr((unsigned int)nbr) + flag);
 }
